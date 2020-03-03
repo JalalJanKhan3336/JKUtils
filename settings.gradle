@@ -1,0 +1,3 @@
+rootProject.name='JKUtils'
+include ':app'
+include ':app:jkutils'
