@@ -2,6 +2,7 @@ package com.pakistan.jkutils.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
@@ -102,7 +103,6 @@ public final class GlideUtils {
                 .into(holder);
     }
 
-
     public static void loadCircularImage(Context context, Bitmap image, ImageView holder){
         Glide
                 .with(context)
@@ -144,6 +144,102 @@ public final class GlideUtils {
     public static void loadImage(FragmentActivity context, Bitmap image, ImageView holder){
         Glide
                 .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Context context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Fragment context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(FragmentActivity context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Context context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Fragment context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(FragmentActivity context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularGIF(Context context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularGIF(Fragment context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularGIF(FragmentActivity context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadImageGIF(Context context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImageGIF(Fragment context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImageGIF(FragmentActivity context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
                 .load(image)
                 .into(holder);
     }
