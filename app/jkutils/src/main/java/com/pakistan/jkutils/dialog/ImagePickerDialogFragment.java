@@ -14,6 +14,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,26 +29,28 @@ import com.zhihu.matisse.internal.entity.CaptureStrategy;
 import java.io.File;
 import java.util.List;
 
-/**
- * Add this to your app's Manifest file inside application tag
- *
- * <provider
- *     android:name="android.support.v4.content.FileProvider"
- *     android:authorities="your_package_name.fileprovider"
- *     android:grantUriPermissions="true"
- *     android:exported="false">
- *     <meta-data
- *         android:name="android.support.FILE_PROVIDER_PATHS"
- *         android:resource="@xml/file_path_provider" />
- * </provider>
- *
- * to Use Camera add following lines to Mattise code
- *
- * .capture(true)
- * .captureStrategy(new CaptureStrategy(true,String authority))
- */
+
+// Add this to your app's Manifest file inside application tag
+//
+// <provider
+//     android:name="android.support.v4.content.FileProvider"
+//     android:authorities="your_package_name.fileprovider"
+//     android:grantUriPermissions="true"
+//     android:exported="false">
+//     <meta-data
+//         android:name="android.support.FILE_PROVIDER_PATHS"
+//         android:resource="@xml/file_path_provider" />
+// </provider>
+//
+// to Use Camera add following lines to Mattise code
+//
+// .capture(true)
+//  .captureStrategy(new CaptureStrategy(true,String authority))
+
 
 public class ImagePickerDialogFragment extends DialogFragment {
+
+    private static final String TAG = "ImagePickerDialogFragme";
 
     private static final int REQUEST_CODE_IMAGE_PICKER = 6554;
     private static final int REQUEST_CODE_IMAGE_CAMERA = 9884;
@@ -132,6 +135,9 @@ public class ImagePickerDialogFragment extends DialogFragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Log.d(TAG, "_onActivityResult_RESULT_CODE: "+resultCode);
+        Log.d(TAG, "_onActivityResult_RESULT_DATA: "+data);
+
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode == Activity.RESULT_OK && data != null){

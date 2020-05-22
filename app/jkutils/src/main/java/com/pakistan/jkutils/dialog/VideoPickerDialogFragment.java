@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -19,11 +20,14 @@ import com.pakistan.jkutils.databinding.FragmentVideoPickerDialogBinding;
 import com.pakistan.jkutils.engine.Glide4Engine;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
+import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
 import java.io.File;
 import java.util.List;
 
 public class VideoPickerDialogFragment extends DialogFragment {
+
+    private static final String TAG = "VideoPickerDialogFragme";
 
     private static final int REQUEST_CODE_VIDEO_PICKER = 3654;
     private static final int REQUEST_CODE_VIDEO_CAMERA = 3584;
@@ -73,11 +77,21 @@ public class VideoPickerDialogFragment extends DialogFragment {
     }
 
     private void recordVideo() {
-        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-
         if(getActivity() != null){
-            if(intent.resolveActivity(getActivity().getPackageManager()) != null)
-                startActivityForResult(intent, REQUEST_CODE_VIDEO_CAMERA);
+            String authority = getActivity().getPackageName()+".fileprovider";
+
+            Matisse.from(this)
+                    .choose(MimeType.ofVideo())
+                    .countable(true)
+                    .maxSelectable(100)
+                    .capture(true)
+                    .captureStrategy(new CaptureStrategy(true, authority))
+                    .gridExpectedSize(getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._120sdp))
+                    .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                    .thumbnailScale(0.85f)
+                    .imageEngine(new Glide4Engine())
+                    .showPreview(false) // Default is `true`
+                    .forResult(REQUEST_CODE_VIDEO_CAMERA);
         }
 
     }
@@ -97,13 +111,18 @@ public class VideoPickerDialogFragment extends DialogFragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Log.d(TAG, "_onActivityResult_RESULT_CODE: "+resultCode);
+        Log.d(TAG, "_onActivityResult_RESULT_DATA: "+data);
+
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode == Activity.RESULT_OK && data != null){
             if(REQUEST_CODE_VIDEO_CAMERA == requestCode){ // Record Video by Camera
-                Uri uri = data.getData();
-                File file = new File(String.valueOf(uri));
-                String path = file.getAbsolutePath();
+                List<String> paths = Matisse.obtainPathResult(data);
+                List<Uri> uris = Matisse.obtainResult(data);
+
+                String path = paths.get(0);
+                Uri uri = uris.get(0);
 
                 if(mListener != null)
                     mListener.onVideoPickedFromCamera(uri, path);
