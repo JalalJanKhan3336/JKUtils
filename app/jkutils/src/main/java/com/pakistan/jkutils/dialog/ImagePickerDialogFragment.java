@@ -23,9 +23,29 @@ import com.pakistan.jkutils.databinding.FragmentImagePickerDialogBinding;
 import com.pakistan.jkutils.engine.Glide4Engine;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
+import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
 import java.io.File;
 import java.util.List;
+
+/**
+ * Add this to your app's Manifest file inside application tag
+ *
+ * <provider
+ *     android:name="android.support.v4.content.FileProvider"
+ *     android:authorities="your_package_name.fileprovider"
+ *     android:grantUriPermissions="true"
+ *     android:exported="false">
+ *     <meta-data
+ *         android:name="android.support.FILE_PROVIDER_PATHS"
+ *         android:resource="@xml/file_path_provider" />
+ * </provider>
+ *
+ * to Use Camera add following lines to Mattise code
+ *
+ * .capture(true)
+ * .captureStrategy(new CaptureStrategy(true,String authority))
+ */
 
 public class ImagePickerDialogFragment extends DialogFragment {
 
@@ -77,16 +97,27 @@ public class ImagePickerDialogFragment extends DialogFragment {
     }
 
     private void captureImage() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
         if(getActivity() != null){
-            if(intent.resolveActivity(getActivity().getPackageManager()) != null)
-                startActivityForResult(intent, REQUEST_CODE_IMAGE_CAMERA);
+            String authority = getActivity().getPackageName()+".fileprovider";
+
+            Matisse.from(this)
+                    .choose(MimeType.ofImage())
+                    .countable(true)
+                    .maxSelectable(100)
+                    .capture(true)
+                    .captureStrategy(new CaptureStrategy(true, authority))
+                    .gridExpectedSize(getResources().getDimensionPixelSize(com.intuit.sdp.R.dimen._120sdp))
+                    .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
+                    .thumbnailScale(0.85f)
+                    .imageEngine(new Glide4Engine())
+                    .showPreview(false) // Default is `true`
+                    .forResult(REQUEST_CODE_IMAGE_CAMERA);
         }
 
     }
 
     private void pickImage() {
+
         Matisse.from(this)
                 .choose(MimeType.ofImage())
                 .countable(true)
@@ -105,9 +136,11 @@ public class ImagePickerDialogFragment extends DialogFragment {
 
         if(resultCode == Activity.RESULT_OK && data != null){
             if(REQUEST_CODE_IMAGE_CAMERA == requestCode){ // Capture Image by Camera
-                Uri uri = data.getData();
-                File file = new File(String.valueOf(uri));
-                String path = file.getAbsolutePath();
+                List<String> paths = Matisse.obtainPathResult(data);
+                List<Uri> uris = Matisse.obtainResult(data);
+
+                String path = paths.get(0);
+                Uri uri = uris.get(0);
 
                 if(mListener != null)
                     mListener.onImagePickedFromCamera(uri, path);
