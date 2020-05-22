@@ -13,98 +13,110 @@ import com.bumptech.glide.request.RequestOptions;
 
 public final class GlideCircularBitmapUtils {
 
-    public static void loadCircularImage(Context context, String image, ImageView holder){
+    public static void loadCircularImage(Context context, String image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(Context context, int image, ImageView holder){
+    public static void loadCircularImage(Context context, int image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(Fragment context, String image, ImageView holder){
+    public static void loadCircularImage(Fragment context, String image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(Fragment context, int image, ImageView holder){
+    public static void loadCircularImage(Fragment context, int image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(FragmentActivity context, String image, ImageView holder){
+    public static void loadCircularImage(FragmentActivity context, String image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(FragmentActivity context, int image, ImageView holder){
+    public static void loadCircularImage(FragmentActivity context, int image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(Context context, Bitmap image, ImageView holder){
+    public static void loadCircularImage(Context context, Bitmap image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(Fragment context, Bitmap image, ImageView holder){
+    public static void loadCircularImage(Fragment context, Bitmap image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(FragmentActivity context, Bitmap image, ImageView holder){
+    public static void loadCircularImage(FragmentActivity context, Bitmap image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(Context context, Drawable image, ImageView holder){
+    public static void loadCircularImage(Context context, Drawable image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(Fragment context, Drawable image, ImageView holder){
+    public static void loadCircularImage(Fragment context, Drawable image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }
 
-    public static void loadCircularImage(FragmentActivity context, Drawable image, ImageView holder){
+    public static void loadCircularImage(FragmentActivity context, Drawable image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .load(image)
+                .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
     }

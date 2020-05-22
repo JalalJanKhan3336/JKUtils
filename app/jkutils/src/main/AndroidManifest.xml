@@ -2,4 +2,7 @@
     package="com.pakistan.jkutils" >
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-feature android:name="android.hardware.camera2"
+        android:required="false"/>
+
 </manifest>

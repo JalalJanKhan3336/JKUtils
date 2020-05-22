@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JKUtils</string>
+    <string name="open_image_dialog">Open Image Dialog</string>
+    <string name="open_video_dialog">Open Video Dialog</string>
 </resources>
