@@ -3,6 +3,7 @@ package com.pakistan.jkutils.utils;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
@@ -125,6 +126,36 @@ public final class GlideCircularGIFUtils {
     }
 
     public static void loadCircularImage(FragmentActivity context, Drawable image, int placeholder, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .placeholder(placeholder)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Context context, Uri image, int placeholder, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .placeholder(placeholder)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Fragment context, Uri image, int placeholder, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .placeholder(placeholder)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(FragmentActivity context, Uri image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .asGif()
