@@ -1,4 +1,4 @@
-package com.pakistan.jkutil.dialog;
+package com.pakistan.jkutils.dialog;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

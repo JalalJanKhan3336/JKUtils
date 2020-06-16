@@ -1,4 +1,4 @@
-package com.pakistan.jkutil.utils;
+package com.pakistan.jkutils.utils;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

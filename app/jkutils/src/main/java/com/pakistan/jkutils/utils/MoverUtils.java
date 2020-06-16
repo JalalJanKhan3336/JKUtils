@@ -1,4 +1,4 @@
-package com.pakistan.jkutil.utils;
+package com.pakistan.jkutils.utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 
 
-import com.pakistan.jkutil.model.Parcel;
+import com.pakistan.jkutils.model.Parcel;
 
 import java.io.Serializable;
 

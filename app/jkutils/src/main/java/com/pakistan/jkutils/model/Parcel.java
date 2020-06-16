@@ -1,4 +1,4 @@
-package com.pakistan.jkutil.model;
+package com.pakistan.jkutils.model;
 
 import org.json.JSONObject;
 

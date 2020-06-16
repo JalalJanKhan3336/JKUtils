@@ -1,4 +1,4 @@
-package com.pakistan.jkutil.manager;
+package com.pakistan.jkutils.manager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

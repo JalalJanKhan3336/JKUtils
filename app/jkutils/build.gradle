@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 'android-R'
-    buildToolsVersion "30.0.0-rc4"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 'R'
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -21,9 +21,10 @@ android {
         }
     }
 
-    viewBinding{
-        enabled = true
+    buildFeatures{
+        viewBinding = true
     }
+
 }
 
 dependencies {
@@ -40,6 +41,4 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-
-    implementation 'com.zhihu.android:matisse:0.5.3-beta3'
 }

@@ -1,4 +1,4 @@
-package com.pakistan.jkutil.adapter;
+package com.pakistan.jkutils.adapter;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;

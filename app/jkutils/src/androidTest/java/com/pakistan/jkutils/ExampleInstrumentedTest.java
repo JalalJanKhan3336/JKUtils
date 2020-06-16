@@ -1,4 +1,4 @@
-package com.pakistan.jkutil;
+package com.pakistan.jkutils;
 
 import android.content.Context;
 

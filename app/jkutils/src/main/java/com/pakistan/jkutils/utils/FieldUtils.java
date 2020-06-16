@@ -1,4 +1,4 @@
-package com.pakistan.jkutil.utils;
+package com.pakistan.jkutils.utils;
 
 import android.text.TextUtils;
 import android.util.Patterns;
