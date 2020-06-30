@@ -13,6 +13,8 @@ import com.bumptech.glide.Glide;
 
 public final class GlideBitmapUtils {
 
+    private GlideBitmapUtils(){}
+    
     public static void loadImage(Context context, String image, int placeholder, ImageView holder){
         Glide
                 .with(context)
@@ -132,4 +134,112 @@ public final class GlideBitmapUtils {
                 .placeholder(placeholder)
                 .into(holder);
     }
+    
+    // Load image without Placeholder
+    public static void loadImage(Context context, String image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Context context, int image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Fragment context, String image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Fragment context, int image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(FragmentActivity context, String image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(FragmentActivity context, int image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Context context, Bitmap image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Fragment context, Bitmap image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(FragmentActivity context, Bitmap image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Context context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Fragment context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(FragmentActivity context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Context context, Uri image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(Fragment context, Uri image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+
+    public static void loadImage(FragmentActivity context, Uri image, ImageView holder){
+        Glide
+                .with(context)
+                .load(image)
+                .into(holder);
+    }
+    
+    
 }
