@@ -14,12 +14,13 @@ import com.bumptech.glide.request.RequestOptions;
 
 public final class GlideCircularGIFUtils {
 
+    private GlideCircularGIFUtils(){}
+    
     public static void loadCircularImage(Context context, String image, int placeholder, ImageView holder){
         Glide
                 .with(context)
                 .asGif()
                 .load(image)
-                .placeholder(placeholder)
                 .placeholder(placeholder)
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder);
@@ -165,4 +166,139 @@ public final class GlideCircularGIFUtils {
                 .into(holder);
     }
 
+    // Load Circular Image without Placeholder
+    public static void loadCircularImage(Context context, String image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Context context, int image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Fragment context, String image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Fragment context, int image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(FragmentActivity context, String image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(FragmentActivity context, int image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Context context, Bitmap image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Fragment context, Bitmap image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(FragmentActivity context, Bitmap image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Context context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Fragment context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(FragmentActivity context, Drawable image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Context context, Uri image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(Fragment context, Uri image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
+
+    public static void loadCircularImage(FragmentActivity context, Uri image, ImageView holder){
+        Glide
+                .with(context)
+                .asGif()
+                .load(image)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder);
+    }
 }
