@@ -1,3 +1,3 @@
 # JKUtils
 
-## Read wiki for instructions
+## Read [wiki](https://github.com/JalalJanKhan3336/JKUtils/wiki) for instructions
